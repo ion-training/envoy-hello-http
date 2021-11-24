@@ -1,5 +1,5 @@
 # envoy-hello
-envoy container hello on port 8080
+envoy container responds with Hello on port 8080
 
 # Topology
 ```
