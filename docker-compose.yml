@@ -1,0 +1,11 @@
+version: "3.9"
+   
+services:
+  envoy:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./conf/:/etc/envoy.d/
+    ports:
+    - "8080:8080"
