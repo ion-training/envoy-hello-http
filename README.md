@@ -23,20 +23,12 @@ Clone and cd into the repo
 git clone https://github.com/ion-training/envoy-hello.git && cd envoy-hello
 ```
 
-Build
-```
-docker build -t hello-envoy .
-```
-
-Start
-```
-docker container run -d hello-envoy
-```
-
-Build and start using docker-compose
+Bring up the container
 ```
 docker-compose up &
 ```
+
+Configuration is passed through file in conf/envoy.conf.yml.
 
 # Sample code
 ```
