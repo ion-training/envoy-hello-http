@@ -28,7 +28,38 @@ Bring up the container
 docker-compose up &
 ```
 
+# Envoy HTTP server conf
+```
+static_resources:
+  listeners:
+  - name: listener_0
+    address:
+      socket_address:
+        address: 0.0.0.0
+        port_value: 8080    
+    filter_chains:
+    - filters:
+      - name: envoy.filters.network.http_connection_manager
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager
+          stat_prefix: edge
+          http_filters:
+          - name: envoy.filters.http.router
+          route_config:
+            virtual_hosts:
+            - name: direct_response_service
+              domains: ["*"]
+              routes:
+              - match:
+                  prefix: "/"
+                direct_response:
+                  status: 200
+                  body:
+                    inline_string: "Hello"
+```
+
 Configuration is passed through file in conf/envoy.conf.yml.
+
 
 # Sample code
 ```
