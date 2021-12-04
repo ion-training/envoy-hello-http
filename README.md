@@ -1,4 +1,4 @@
-# envoy-hello
+# envoy-hello-http
 envoy container responds with Hello on port 8080
 
 # Topology
@@ -20,7 +20,7 @@ Get docker [LINK](https://docs.docker.com/get-docker/)
 
 Clone and cd into the repo
 ```
-git clone https://github.com/ion-training/envoy-hello.git && cd envoy-hello
+git clone https://github.com/ion-training/envoy-hello-http.git && cd envoy-hello-http
 ```
 
 Bring up the container
